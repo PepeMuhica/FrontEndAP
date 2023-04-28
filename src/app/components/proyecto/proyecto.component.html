@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="div1">
+        <div id="proyecto">
+            <section>
+                <h1 class="heading titulo">Proyectos</h1>
+                <div class="proyecto-block" *ngIf="isLogged">
+                    <div style="text-align:center" *ngIf="isLogged">
+                        <button type="button" class="btn btn-dark" routerLink="/nuevoproy" *ngIf="isLogged">
+                            <i class="bi bi-card-text"></i> Añadir Proyecto
+                        </button>
+                    </div>
+                </div>
+
+                <div class="proyecto-block" *ngFor="let Proyecto of proyect">
+                    <h3>{{Proyecto.nombreP}}</h3>
+                    <h5>{{Proyecto.descripcionP}}</h5>
+                    <img class="imagenes3" src="../../../assets/proyecto.png">
+                    <div style="float:right" *ngIf="isLogged">
+                        <button class="btn btn-success" routerLink="/editproy/{{Proyecto.id}}">
+                            <i class="bi bi-pencil-fill"></i></button>
+                    </div>
+                    <div style="float:right" *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+                            <i class="bi bi-trash-fill"></i></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+   </div>
+</div>

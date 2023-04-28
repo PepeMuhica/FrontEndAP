@@ -1,0 +1,25 @@
+.container{
+    min-height: 100vh;
+    background-color:#171212;
+    padding: 10%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+div{
+    color: #fff;
+}
+
+.nomEmp{
+    margin-bottom: 10px;
+}
+
+label{
+    padding: 5px;
+}
+
+button{
+    margin-top: 20px;
+    background: #171212;
+    border: solid 2px #fff;
+}

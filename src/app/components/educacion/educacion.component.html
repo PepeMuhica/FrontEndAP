@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="div1">
+        <div id="education">
+            <section>
+                <h1 class="heading titulo" style="color: #ffc107;" >Educación</h1>
+                <div class="education-block" *ngIf="isLogged">
+                    <div style="text-align:center" *ngIf="isLogged">
+                        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+                            <i class="bi bi-card-text"></i> Añadir Educación
+                        </button>
+                    </div>
+                </div>
+
+                <div class="education-block" *ngFor="let Educacion of educacion">
+                    <h3>{{Educacion.nombreE}}</h3>
+                    <h5>{{Educacion.descripcionE}}</h5>
+                    <img class="imagenes3" src="../../../assets/pngegg.png">
+                    <div style="float:right" *ngIf="isLogged">
+                        <button class="btn btn-success" routerLink="/editedu/{{Educacion.id}}">
+                            <i class="bi bi-pencil-fill"></i></button>
+                    </div>
+                    <div style="float:right" *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                            <i class="bi bi-trash-fill"></i></button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

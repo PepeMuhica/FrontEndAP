@@ -1,0 +1,27 @@
+<div class="row" id="skills">
+    <h1 class="text-center">Hard & Soft skills</h1>
+    <div id="skill">
+      <div style="text-align:center" *ngIf="isLogged">
+        <button type="button" class="btn btn-dark" routerLink="/nuevahyss/">
+            <i class="bi bi-card-text"></i> Añadir Skill
+        </button>
+    </div>
+    </div>
+
+    <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let Hardysoftskills of hyss">
+        <div class="wrapper" >
+            <circle-progress [percent]="Hardysoftskills.porcentajeS" [radius]="70" [showUnits]="false"  [title]="Hardysoftskills.nombreS" [outerStrokeWidth]="10" [innerStrokeWidth]="6"
+            [outerStrokeColor]="'#900C3F'" [innerStrokeColor]="'#D6D6EA'" [animation]="true" [animationDuration]="800">
+            </circle-progress>
+
+            <div class="botones" *ngIf="isLogged" >
+            <button class="btn btn-success" routerLink="/edithyss/{{Hardysoftskills.id}}">
+                <i class="bi bi-pencil-fill"></i></button>
+            <div  class="boton1">
+                <button  class="btn btn-danger" (click)="delete(Hardysoftskills.id)">
+                    <i class="bi bi-trash-fill"></i></button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
